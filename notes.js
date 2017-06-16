@@ -2,9 +2,6 @@
 Matthew Phillips
 15 June 2017
 */
-
-console.log('APP-INFO: Starting Notes.js...');
-
 const fs = require('fs');
 
 // Utility: Fetch existing notes
@@ -13,7 +10,7 @@ var fetchNotes = () => {
     var notesString = fs.readFileSync('notes-data.json');
     return JSON.parse(notesString);
   } catch (e) {}
-  console.log('APP-ERROR: Error while adding notes.');
+  console.log('Error while adding notes.');
   return [];
 };
 
@@ -38,7 +35,7 @@ var addNote = (title, body) => {
     saveNotes(notes);
     return note;
   } else {
-    console.log('APP-INFO: Note already exists. Please enter only new notes.');
+    console.log('Note already exists. Please enter only new notes.');
   }
 };
 
